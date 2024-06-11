@@ -1,0 +1,22 @@
+echo off
+title Upload to Pinv's Development Server
+color c
+cls
+echo.
+echo Upload to Pinv's Development Server
+echo.
+git init
+if "%username%" == "jason" (
+	git config --global user.email "[YT] pinv@example.com"
+	git config --global user.name "[YT] pinv"
+	git commit -m "Upload File Batch on %date% by [YT] pinv"
+	git pull
+) else (
+	git config --global user.email "%username%@example.com"
+	git config --global user.name "%username%"
+	git commit -m "Upload Batch on %date% by %username%"
+	git pull
+)
+echo.
+echo.
+pause
